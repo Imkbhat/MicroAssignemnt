@@ -1,0 +1,30 @@
+1. check version => docker --version
+2. run image => docker (container) run image name/version (fetch from docker hub if image doesn't exists in local mcn)
+3. run image in specific port => docker run -p 5000:5000 imagename
+4. run in detached mode => docker run -p 5000:5000 -d imagename (won't print logs)
+5. check logs => docker logs <unique container id>
+6. check images in local => docker images
+7. check running containers => docker container ls
+8. check running containers with all status=> docker container ls -a
+9. terminate a container => docker container stop <uid> (starting 4-5 digit is enough).
+10. create tag from existing image => docker tag in28min/todo-rest-api-h2:1.0.0.RELEASE in28min/todo-rest-api-h2:latest
+11. pull image => docker pull mysql
+12. search offcial image => docker search mysql
+13. history of image => docker image history f8049a2<img id>
+14. remove image from local => docker image remove <img id>(6th point).
+15. Pause a docker => docker container pause 6478
+16. Unpause => docker container unpause 6478
+17. Inspect => docker conatiner inspect 6478 
+18. Remove all stopped containers => docker container prune 
+19. log tailing => docker container logs -f <cont id>
+20. kill a container => docker container kill <cont id>(immediate stops)
+21. automatic restart policy => docker run -p 5000:5000 -d --restart=always imagename(when u restart docker desktop, image will restart)
+22. stop restart => docker container stop -> docker container prune
+23. Events  => docker events
+24. processes running in docker container => docker top
+25. all the stats of running container => docker stats
+26. all the defent systems => socker system df
+27. set cpu limit and memory for container => docker run -m 512m --cpu-quota 500000
+
+<==============================================================================>
+1. Run zipkin server in docker => docker run -p 9411:9411 openzipkin/zipkin:2.23
