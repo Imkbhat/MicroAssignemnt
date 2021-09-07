@@ -20,3 +20,11 @@ http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
 http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
 
 http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
+
+Build images => Maven->Run as Mavn Build => spring-boot:build-image -DskipTests
+
+container image location
+docker.io/imkbhat90/mmv2-currency-exchange-service:0.0.1-SNAPSHOT
+docker.io/imkbhat90/mmv2-naming-server:0.0.1-SNAPSHOT
+docker.io/imkbhat90/mmv2-currency-conversion-service:0.0.1-SNAPSHOT
+docker.io/imkbhat90/mmv2-api-gateway:0.0.1-SNAPSHOT

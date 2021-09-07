@@ -28,3 +28,5 @@
 
 <==============================================================================>
 1. Run zipkin server in docker => docker run -p 9411:9411 openzipkin/zipkin:2.23
+2. Build image => spring-boot:build-image -DskipTests
+3. Docker compose => go to proj folder where docker-compose.yaml file saved and type , docker-compose up

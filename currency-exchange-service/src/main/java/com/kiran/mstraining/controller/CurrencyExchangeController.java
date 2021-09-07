@@ -1,8 +1,7 @@
 package com.kiran.mstraining.controller;
 
-import java.math.BigDecimal;
-import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +14,8 @@ import com.kiran.mstraining.repository.CurrencyExchangeRepository;
 @RestController
 public class CurrencyExchangeController {
 	
+	private Logger logger = LoggerFactory.getLogger(CurrencyExchangeController.class);
+	
 	@Autowired
 	private CurrencyExchangeRepository exchangeRepo;
 	
@@ -26,6 +27,7 @@ public class CurrencyExchangeController {
 	public CurrencyExchange getExchangeValue(@PathVariable("from") String from, 
 			@PathVariable("to") String to) {
 		
+		logger.info("getExchangeValue called with {} to {}", from, to);
 		CurrencyExchange currencyExchange = exchangeRepo.findByFromAndTo(from, to);
 		if(currencyExchange == null) {
 			throw new RuntimeException("Unable to find data for =>"+from+" =To="+to);
